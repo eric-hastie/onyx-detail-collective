@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Onyx Detail Collective — Before &amp; After</title>
+<style>
+  :root{ --ink:#0b0b0d; --gold:#c9a24b; --gold-soft:#e7d4a3; --slate:#3a3d44; --mist:#f4f3f0; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  @page{ size:letter; margin:0; }
+  body{ font-family:"Helvetica Neue",Arial,sans-serif; color:var(--ink); background:#fff;
+        -webkit-print-color-adjust:exact; print-color-adjust:exact; width:8.5in; }
+  .page{ width:8.5in; display:flex; flex-direction:column; }
+
+  header{ background:var(--ink); color:#fff; padding:.4in .7in .3in; border-bottom:3px solid var(--gold); }
+  .brand{ font-size:20pt; font-weight:800; letter-spacing:.04em; }
+  .brand .o{ color:var(--gold); }
+  .brand .sub{ font-size:9pt; letter-spacing:.3em; color:var(--gold-soft); text-transform:uppercase; font-weight:400; }
+  .title{ margin-top:.16in; font-size:15pt; font-weight:300; }
+  .title b{ color:var(--gold-soft); font-weight:700; }
+
+  main{ padding:.28in .7in; flex:1; }
+  .pair{ margin-bottom:.20in; }
+  .pair-imgs{ display:flex; gap:.18in; }
+  .slot{ flex:1; height:1.9in; border-radius:8px; position:relative; overflow:hidden;
+         background-size:cover; background-position:center; }
+  .slot.empty{ border:2px dashed #c8c6bf; background:var(--mist);
+               display:flex; align-items:center; justify-content:center; }
+  .slot .tag{ position:absolute; top:.1in; left:.1in; font-size:8pt; font-weight:800;
+              letter-spacing:.12em; padding:.04in .12in; border-radius:4px; color:#fff; }
+  .slot .tag.before{ background:#7a7d84; }
+  .slot .tag.after{ background:var(--gold); color:var(--ink); }
+  .slot .hint{ color:#9a988f; font-size:9pt; text-align:center; line-height:1.5; padding:.2in; }
+  .slot .hint code{ font-family:Menlo,monospace; font-size:8pt; color:var(--slate); }
+  .caption{ margin-top:.10in; font-size:9.5pt; color:var(--slate); }
+  .caption b{ color:var(--ink); }
+
+  footer{ background:var(--ink); color:#fff; padding:.26in .7in; display:flex; justify-content:space-between; align-items:center; border-top:3px solid var(--gold); font-size:10pt; }
+  footer .g{ color:var(--gold-soft); font-weight:700; }
+  footer .ph{ color:var(--gold); font-weight:700; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="brand"><span class="o">◆</span> ONYX <span class="sub">Detail Collective</span></div>
+    <div class="title">The <b>before &amp; after</b> &mdash; this is what your fleet looks like with us on it.</div>
+  </header>
+
+  <main>
+    <!-- PAIR 1 -->
+    <div class="pair">
+      <div class="pair-imgs">
+        <div class="slot empty"><span class="tag before">BEFORE</span><div class="hint">Drop a photo here<br><code>marketing/photos/1-before.jpg</code></div></div>
+        <div class="slot empty"><span class="tag after">AFTER</span><div class="hint">Drop a photo here<br><code>marketing/photos/1-after.jpg</code></div></div>
+      </div>
+      <div class="caption"><b>[Vehicle / client type]</b> &mdash; [one line: e.g. "HVAC service van, full exterior + interior, 45 min on-site."]</div>
+    </div>
+
+    <!-- PAIR 2 -->
+    <div class="pair">
+      <div class="pair-imgs">
+        <div class="slot empty"><span class="tag before">BEFORE</span><div class="hint">Drop a photo here<br><code>marketing/photos/2-before.jpg</code></div></div>
+        <div class="slot empty"><span class="tag after">AFTER</span><div class="hint">Drop a photo here<br><code>marketing/photos/2-after.jpg</code></div></div>
+      </div>
+      <div class="caption"><b>[Vehicle / client type]</b> &mdash; [one line describing the work.]</div>
+    </div>
+
+    <!-- PAIR 3 -->
+    <div class="pair">
+      <div class="pair-imgs">
+        <div class="slot empty"><span class="tag before">BEFORE</span><div class="hint">Drop a photo here<br><code>marketing/photos/3-before.jpg</code></div></div>
+        <div class="slot empty"><span class="tag after">AFTER</span><div class="hint">Drop a photo here<br><code>marketing/photos/3-after.jpg</code></div></div>
+      </div>
+      <div class="caption"><b>[Vehicle / client type]</b> &mdash; [one line describing the work.]</div>
+    </div>
+  </main>
+
+  <footer>
+    <div><span class="g">Rob</span> &nbsp;·&nbsp; <span class="ph">[YOUR PHONE]</span> &nbsp;·&nbsp; [@ONYXDETAILCOLLECTIVE]</div>
+    <div style="color:#9a9ca1;font-size:8.5pt;letter-spacing:.04em;">MOBILE FLEET DETAILING · DALLAS</div>
+  </footer>
+</div>
+</body>
+</html>
