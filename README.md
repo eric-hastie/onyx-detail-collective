@@ -18,6 +18,7 @@ This repo is Rob's working kit. It has two things right now:
 | 20 minutes and want the best targets | **[leads/00-priority-hitlist.md](leads/00-priority-hitlist.md)** |
 | A phone and want to start calling | **[outreach/01-scripts.md](outreach/01-scripts.md)** |
 | A meeting and need to quote a price | **[outreach/02-pricing.md](outreach/02-pricing.md)** |
+| A walk-up and want a flyer to hand over | **[marketing/leave-behind.pdf](marketing/leave-behind.pdf)** |
 | Want to understand the whole strategy | **[outreach/00-playbook.md](outreach/00-playbook.md)** |
 
 ## The whole picture
@@ -35,6 +36,11 @@ This repo is Rob's working kit. It has two things right now:
 - [01 — Scripts (call / text / email / walk-up)](outreach/01-scripts.md)
 - [02 — Pricing fleet contracts](outreach/02-pricing.md)
 - [03 — Buying signals & how to find more leads yourself](outreach/03-signals-and-finding-leads.md)
+
+### Marketing handouts (print-ready)
+- [Leave-behind flyer](marketing/leave-behind.pdf) — one-page pitch to hand out on walk-ups
+- [Before/after sheet](marketing/before-after.pdf) — portfolio template (drop in your real photos)
+- [How to fill in & print them](marketing/README.md) — add your phone/photos, re-render the PDF
 
 ### Behind the research
 - [Methodology & data caveats](research/methodology.md)
