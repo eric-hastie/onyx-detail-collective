@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Onyx Detail Collective — Dallas Fleet Playbook</title>
+<meta name="description" content="A researched list of fleet-detailing prospects within 15 miles of downtown Dallas, plus an outreach playbook, scripts, and pricing — built for Onyx Detail Collective.">
+<style>
+:root{
+  --bg:#0c0c0e; --panel:#151619; --panel2:#1c1d21; --line:#2a2b31;
+  --txt:#ececef; --muted:#9a9ba2; --gold:#c9a24b; --gold-soft:#e7d4a3;
+  --hi:#1f5f43; --hitxt:#7ff0c8; --med:#5a4a1e; --medtxt:#f0d79a; --lo:#3a3d44; --lotxt:#c3c9d4;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(12,12,14,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:24px;height:56px}
+.nav .logo{font-weight:800;letter-spacing:.04em;font-size:16px;color:#fff}
+.nav .logo .d{color:var(--gold)}
+.nav a.link{color:var(--muted);font-size:13.5px;font-weight:600}
+.nav a.link:hover{color:var(--txt);text-decoration:none}
+.nav .spacer{flex:1}
+@media(max-width:720px){.nav a.link{display:none}}
+
+/* header */
+header.hero{padding:60px 0 30px;border-bottom:1px solid var(--line);
+  background:radial-gradient(1200px 380px at 20% -10%, rgba(201,162,75,.10), transparent 60%)}
+.eyebrow{color:var(--gold);font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:12px;margin:0 0 14px}
+h1{font-size:42px;line-height:1.1;margin:0 0 14px;font-weight:780;letter-spacing:-.02em}
+h1 .d{color:var(--gold)}
+.sub{color:#cdd0d8;font-size:18px;max-width:720px;margin:0}
+.byline{margin-top:20px;color:var(--muted);font-size:14px}
+.byline b{color:var(--txt)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:34px 0 4px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}
+.stat .n{font-size:30px;font-weight:760;letter-spacing:-.02em;color:var(--gold-soft)}
+.stat .l{color:var(--muted);font-size:13px;margin-top:4px}
+
+section{padding:44px 0 8px}
+h2{font-size:24px;margin:0 0 8px;letter-spacing:-.01em}
+.lead{color:#cdd0d8;max-width:780px;margin:0 0 20px}
+h3.kicker{color:var(--gold);font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin:30px 0 14px}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:860px){.grid4,.grid3{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(2,1fr)}h1{font-size:32px}}
+@media(max-width:560px){.grid4,.grid3,.grid2{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.card h4{margin:0 0 6px;font-size:15px;color:var(--gold-soft)}
+.card p{margin:0;color:var(--muted);font-size:13.5px}
+.card.step{border-left:3px solid var(--gold)}
+.card.step .num{color:var(--gold);font-weight:800;font-size:13px;letter-spacing:.05em}
+
+/* priority cards */
+.pri{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:760px){.pri{grid-template-columns:1fr}}
+.pcard{background:linear-gradient(180deg,var(--panel),#121316);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:12px;padding:16px 18px}
+.pcard .tag{font-size:11px;font-weight:800;letter-spacing:.06em;color:var(--gold);text-transform:uppercase}
+.pcard h4{margin:6px 0 4px;font-size:16px}
+.pcard .where{color:var(--muted);font-size:12.5px;margin-bottom:8px}
+.pcard p{margin:0;color:#cdd0d8;font-size:13.5px}
+.pcard .move{margin-top:10px;font-size:13px;color:var(--gold-soft)}
+.pcard .move b{color:var(--gold)}
+
+/* controls + table */
+.controls{position:sticky;top:56px;z-index:10;background:var(--bg);
+  padding:18px 0 14px;border-bottom:1px solid var(--line);
+  display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+#q{flex:1;min-width:220px;background:var(--panel2);border:1px solid var(--line);color:var(--txt);
+  padding:11px 14px;border-radius:10px;font-size:14px;outline:none}
+#q:focus{border-color:var(--gold)}
+.seg{display:flex;gap:5px;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:4px;flex-wrap:wrap}
+.seg button{background:transparent;border:0;color:var(--muted);padding:7px 12px;border-radius:7px;cursor:pointer;font-size:12.5px;font-weight:600;white-space:nowrap}
+.seg button.on{background:var(--gold);color:#1a1500}
+.count{color:var(--muted);font-size:13px;white-space:nowrap;margin-left:auto}
+.tablewrap{overflow-x:auto;margin:16px 0 10px;border:1px solid var(--line);border-radius:12px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:900px}
+thead th{position:sticky;top:0;background:var(--panel2);text-align:left;padding:12px 14px;
+  font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);
+  border-bottom:1px solid var(--line);cursor:pointer;user-select:none;white-space:nowrap}
+thead th:hover{color:var(--txt)}
+thead th .arw{opacity:.6;font-size:10px}
+tbody td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--panel)}
+.co{font-weight:650;font-size:14.5px}
+.co .star{color:var(--gold);margin-right:4px}
+.sub2{color:var(--muted);font-size:12px;margin-top:2px}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.b-deal{background:#21344f;color:#bcd6ff}.b-svc{background:#3a2b1a;color:#f0c79a}
+.b-rent{background:#3a1f3a;color:#e9b8e9}.b-prop{background:#1f3a3a;color:#9fe9e0}.b-spec{background:#33371f;color:#dceaa0}
+.b-hi{background:var(--hi);color:var(--hitxt)}.b-med{background:var(--med);color:var(--medtxt)}.b-lo{background:var(--lo);color:var(--lotxt)}
+.muted{color:var(--muted)}
+.src{font-weight:600;white-space:nowrap}
+
+/* scripts */
+.script{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px}
+.script .h{font-size:13px;font-weight:700;color:var(--gold-soft);margin-bottom:8px;letter-spacing:.02em}
+.script .quote{background:var(--panel2);border-left:3px solid var(--gold);border-radius:6px;padding:11px 14px;color:#dfe2e8;font-size:13.5px;font-style:italic;margin:0}
+.script .quote + .quote{margin-top:8px}
+
+table.menu{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:6px}
+table.menu td,table.menu th{padding:11px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+table.menu th{color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em}
+table.menu td:first-child{font-weight:700;color:var(--gold-soft);white-space:nowrap}
+table.menu .price{color:var(--txt);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+.note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--gold);
+  border-radius:8px;padding:14px 16px;margin:16px 0;color:#cdd0d8;font-size:13.5px}
+.handouts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.handouts{grid-template-columns:1fr}}
+.ho{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;display:block}
+.ho:hover{border-color:var(--gold);text-decoration:none}
+.ho .t{font-weight:700;color:var(--gold-soft);font-size:15px}
+.ho p{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+footer{border-top:1px solid var(--line);padding:30px 0 70px;color:var(--muted);font-size:13px;margin-top:30px}
+footer .wrap{max-width:820px}
+footer b{color:var(--txt)}
+</style>
+</head>
+<body>
+
+<div class="nav"><div class="wrap">
+  <span class="logo">◆ ONYX <span class="d">/</span> Fleet Playbook</span>
+  <span class="spacer"></span>
+  <a class="link" href="#start">Start here</a>
+  <a class="link" href="#priority">Priority</a>
+  <a class="link" href="#leads">Leads</a>
+  <a class="link" href="#outreach">Outreach</a>
+  <a class="link" href="#pricing">Pricing</a>
+  <a class="link" href="#handouts">Handouts</a>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <p class="eyebrow">Dallas · Mobile Detailing · Fleet Prospecting</p>
+  <h1>Onyx Detail Collective <span class="d">—</span> Fleet Playbook</h1>
+  <p class="sub">A researched list of <b>fleet-detailing prospects within 15 miles of downtown Dallas</b>, plus the outreach playbook, scripts, and pricing to turn them into recurring accounts. Built for a mobile operation — you come to them.</p>
+  <p class="byline">Prepared for <b>Rob</b> · Onyx Detail Collective · Research compiled June 2026 · <span class="muted">Phase 1 of 2 — GTM plan to follow</span></p>
+  <div class="stats">
+    <div class="stat"><div class="n" id="s-total">79</div><div class="l">verified fleet prospects</div></div>
+    <div class="stat"><div class="n" id="s-pri">17</div><div class="l">priority targets</div></div>
+    <div class="stat"><div class="n">5</div><div class="l">market segments</div></div>
+    <div class="stat"><div class="n">15 mi</div><div class="l">of downtown Dallas</div></div>
+  </div>
+</div></header>
+
+<!-- START -->
+<section id="start"><div class="wrap">
+  <h2>Why fleet work — and how to win it</h2>
+  <p class="lead">Retail detailing is a treadmill: every dollar needs a new customer. <b>Fleet detailing is recurring revenue</b> — land an account once, service it on a schedule, get paid predictably. Your edge as a <b>mobile</b> operator is simple: most fleets <em>can't</em> bring vehicles to a shop, so you come to their yard. That's the whole pitch.</p>
+
+  <h3 class="kicker">The four kinds of fleet buyer</h3>
+  <div class="grid4">
+    <div class="card"><h4>Image-driven</h4><p>HVAC, plumbing, pest, exotic rental, black-car. The vehicle is a billboard. <em>"A clean fleet sells for you; dirty trucks cost you jobs."</em></p></div>
+    <div class="card"><h4>Volume / recon</h4><p>Dealers, auctions, RV. They want units sale-ready fast. <em>"I add recon capacity on your lot, per car, no bottleneck."</em></p></div>
+    <div class="card"><h4>Compliance-driven</h4><p>Medical transport (NEMT). Sanitation is regulated. <em>"Compliance-grade sanitize + detail on a fixed schedule."</em></p></div>
+    <div class="card"><h4>Facilities / ops</h4><p>Hotels, clubs, property mgmt. One less vendor headache. <em>"One scheduled vendor for every vehicle on the property."</em></p></div>
+  </div>
+
+  <h3 class="kicker">The model that wins: trial → contract</h3>
+  <div class="grid4">
+    <div class="card step"><div class="num">STEP 1</div><h4>Land a trial</h4><p>Detail one or two vehicles at a fair price so they see the work, risk-free.</p></div>
+    <div class="card step"><div class="num">STEP 2</div><h4>Walk the result</h4><p>Show the owner the finished vehicle in person. This is where the contract is sold.</p></div>
+    <div class="card step"><div class="num">STEP 3</div><h4>Propose a schedule</h4><p>Per-vehicle price × cadence = one predictable monthly invoice.</p></div>
+    <div class="card step"><div class="num">STEP 4</div><h4>Lock it + refer</h4><p>One-page agreement. Over-deliver early, then ask who else runs trucks.</p></div>
+  </div>
+</div></section>
+
+<!-- PRIORITY -->
+<section id="priority"><div class="wrap">
+  <h2>⭐ Where to start</h2>
+  <p class="lead">Out of 79 leads, these are the highest-value plays. The logic: <b>one big account or one dense cluster beats ten scattered cold calls.</b></p>
+  <div class="pri">
+    <div class="pcard"><span class="tag">Biggest single account</span><h4>United Caterers</h4><div class="where">Grand Prairie · 502 Idlewild Rd</div><p>75+ company-owned food trucks plus ~100 independent trucks on one 4-acre yard — the highest vehicle density on the entire list.</p><div class="move"><b>Move:</b> Call (972) 264-1961, ask for the fleet/ops manager. Pitch a standing wash for the Hot Truck fleet <em>and</em> the indies who park there.</div></div>
+    <div class="pcard"><span class="tag">Biggest single account</span><h4>Manheim Dallas (auction)</h4><div class="where">SW Dallas · 5333 W. Kiest Blvd</div><p>Thousands of wholesale units cycle through; sale-prep recon detailing is constant. One contract = ongoing work.</p><div class="move"><b>Move:</b> Ask for the recon/lot manager or in-lane detail vendor coordinator. Pitch overflow sale-prep capacity.</div></div>
+    <div class="pcard"><span class="tag">Dense cluster — one trip</span><h4>Harry Hines used-car corridor</h4><div class="where">NW Dallas · 75229 / 75220</div><p>8–10 independent / BHPH lots in a 2-mile stretch. Every car gets reconditioned. Owners are usually on-site.</p><div class="move"><b>Move:</b> Park once, walk the strip, quote per-car recon. <b>Start here.</b></div></div>
+    <div class="pcard"><span class="tag">Easiest first "yes"</span><h4>Chapman Air · Add-All Electric</h4><div class="where">Dallas / DFW</div><p>6 trucks and 5 bucket trucks respectively — small enough that the owner decides today. A quick win funds the gas.</p><div class="move"><b>Move:</b> Owner-direct call; pitch a bi-weekly route.</div></div>
+    <div class="pcard"><span class="tag">Cleanliness = the product</span><h4>Exotic-rental trio</h4><div class="where">Dallas / Uptown · 75201</div><p>Roma (~50 cars), Platinum, Black Label. Cleanliness directly drives the daily rate; open 24/7 so they can't shop-detail.</p><div class="move"><b>Move:</b> Pitch between-rental, on-site turnaround detailing.</div></div>
+    <div class="pcard"><span class="tag">Deepest recurring vein</span><h4>NEMT medical transport</h4><div class="where">Dallas–Fort Worth</div><p>Paramount, M&amp;H, UltraCare, Crown, Dash. Vans <em>must</em> be sanitized constantly — it's compliance, not vanity.</p><div class="move"><b>Move:</b> Pitch a "compliance-grade sanitize + detail" program. Confirm their yard is in-radius.</div></div>
+  </div>
+  <div class="note">A suggested <b>first week</b> is in the playbook: Mon — call the easy yeses · Tue — drive the Harry Hines + Forest Lane clusters · Wed — the big-account calls · Thu — the exotic-rental trio · Fri — NEMT + follow-ups. Track every call in a simple sheet; that tracker becomes the backbone of the Phase-2 GTM plan.</div>
+</div></section>
+
+<!-- LEADS -->
+<section id="leads"><div class="wrap">
+  <h2>The full prospect list</h2>
+  <p class="lead">All 79, searchable and sortable. Filter by segment or jump to the priority targets. Every row links to the source it was found on — and carries a confidence flag. <b>Verify address &amp; phone before you drive.</b></p>
+</div>
+<div class="wrap">
+  <div class="controls">
+    <input id="q" type="search" placeholder="Search business, city, or fleet type…" autocomplete="off">
+    <div class="seg" id="seg">
+      <button data-seg="all" class="on">All</button>
+      <button data-seg="pri">⭐ Priority</button>
+      <button data-seg="deal">Dealers &amp; Auctions</button>
+      <button data-seg="svc">Service Fleets</button>
+      <button data-seg="rent">Rental·Limo·Medical</button>
+      <button data-seg="prop">Property·Hospitality</button>
+      <button data-seg="spec">Trades·Specialty</button>
+    </div>
+    <span class="count" id="count"></span>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <thead><tr>
+        <th data-k="name">Business <span class="arw"></span></th>
+        <th data-k="seg">Segment <span class="arw"></span></th>
+        <th data-k="city">City / Area <span class="arw"></span></th>
+        <th data-k="signal">Fleet signal / why <span class="arw"></span></th>
+        <th data-k="angle">Contact angle <span class="arw"></span></th>
+        <th data-k="conf">Conf. <span class="arw"></span></th>
+        <th>Source</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+</div></section>
+
+<!-- OUTREACH -->
+<section id="outreach"><div class="wrap">
+  <h2>Outreach kit — what to say</h2>
+  <p class="lead">Copy-paste starting points. The golden rule: <b>lead with the problem you solve, ask for the decision-maker, propose a trial.</b> Never open with price.</p>
+
+  <div class="script">
+    <div class="h">Cold-call opener — get to the right person</div>
+    <p class="quote">"Hi, this is Rob with Onyx Detail Collective. Who handles keeping your trucks/vans clean — is that you or someone else?"</p>
+    <p class="quote">"Great. I run a mobile detailing service — I come to your yard, so your vehicles never leave to get cleaned. I'd love to do <b>one truck as a no-pressure trial</b> so you can see the work. If you like it, we set up a schedule; if not, no harm. Could I swing by this week?"</p>
+  </div>
+
+  <div class="grid2">
+    <div class="script"><div class="h">Opener · Image-driven (service, exotic)</div><p class="quote">"Your trucks are out in driveways all day — they're rolling billboards. I keep fleets like yours photo-ready so every job site sees a clean, professional brand."</p></div>
+    <div class="script"><div class="h">Opener · Volume/recon (dealers, auctions)</div><p class="quote">"I add reconditioning capacity right on your lot — per-car, on your schedule, so units get sale-ready without clogging your shop."</p></div>
+    <div class="script"><div class="h">Opener · Compliance (NEMT)</div><p class="quote">"I run a recurring sanitize-and-detail program built for patient-transport vans — interiors disinfected on a fixed schedule, no downtime since I come to you."</p></div>
+    <div class="script"><div class="h">Opener · Facilities/ops (hotels, clubs)</div><p class="quote">"I can be your single scheduled vendor for every vehicle on the property — shuttles, valet cars, maintenance trucks — kept to your brand standard, on-site."</p></div>
+  </div>
+
+  <div class="grid2">
+    <div class="script"><div class="h">Text — for owner-run small fleets</div><p class="quote">Hi [Name], this is Rob with Onyx Detail Collective — mobile fleet detailing in Dallas. I come to your yard so your trucks never miss a day of work. Can I do one as a free-look trial this week? Happy to send before/after pics.</p></div>
+    <div class="script"><div class="h">Walk-up — dealer lots &amp; yards (your best channel)</div><p class="quote">"I'm Rob with Onyx — mobile detailing. I detail recon units right here on the lot so you don't tie up staff or send cars out. Want me to do one right now so you can see it?"</p></div>
+  </div>
+
+  <div class="script">
+    <div class="h">Cold email — keep it under 120 words, attach 2–3 before/afters</div>
+    <p class="quote"><b>Subject:</b> Keeping [Company]'s fleet sharp — on-site, on a schedule<br><br>Hi [Name], I'm Rob with <b>Onyx Detail Collective</b>, a mobile detailing service in Dallas. I keep fleets clean <b>without the vehicles ever leaving the yard</b> — I come to you, on a set schedule. I'd like to <b>detail one vehicle as a trial</b> so you can see the work, no commitment. Open to a quick call this week? — Rob, [phone]</p>
+  </div>
+
+  <div class="note"><b>Follow-up is where the money is.</b> Most fleet deals close on the 2nd–4th touch. Call/walk-up → email the one-pager (48 hrs) → "what day works?" (Fri) → a value text next week. No lead dies without a hard no or 4+ touches.</div>
+</div></section>
+
+<!-- PRICING -->
+<section id="pricing"><div class="wrap">
+  <h2>Pricing fleet contracts</h2>
+  <p class="lead">Fleet pricing trades a lower per-vehicle price for volume + a recurring schedule. The math: <b>per-vehicle price × cadence = a predictable monthly invoice.</b> Ranges below are for structuring the <em>offer</em> — Rob sets final numbers from his own costs.</p>
+  <table class="menu">
+    <thead><tr><th>Tier</th><th>What's included</th><th>Cadence</th><th>Starting range*</th></tr></thead>
+    <tbody>
+      <tr><td>Maintenance Wash</td><td>Exterior wash, wheels, windows, quick wipe-down</td><td>Weekly / bi-weekly</td><td class="price">$15–$35</td></tr>
+      <tr><td>Standard Fleet Detail</td><td>Wash + full interior vacuum, wipe, glass</td><td>Bi-weekly / monthly</td><td class="price">$40–$90</td></tr>
+      <tr><td>Deep / Recon Detail</td><td>Full interior + exterior, shampoo/extraction, dressing</td><td>Monthly / per-unit</td><td class="price">$90–$200+</td></tr>
+      <tr><td>Sanitize Add-On</td><td>Disinfectant treatment, documented (NEMT)</td><td>Per the contract</td><td class="price">$20–$50</td></tr>
+    </tbody>
+  </table>
+  <p class="lead" style="margin-top:14px;font-size:13.5px">*Starting ranges for structuring the offer only — not quotes. Lower end = high-volume single-yard; higher end = larger vehicles or deeper work.</p>
+  <div class="grid3">
+    <div class="card"><h4>Quote the schedule, not the car</h4><p>"All 20 trucks kept sharp for $X/month, every other Tuesday" lands better than "$25/truck."</p></div>
+    <div class="card"><h4>Volume + commitment discounts</h4><p>More vehicles per stop → lower per-vehicle price. Small discount for a signed 3–6 month schedule.</p></div>
+    <div class="card"><h4>Know your floor</h4><p>(products) + (target hourly × time) + (drive ÷ fleet) = cost floor. Quote above it, every time.</p></div>
+  </div>
+</div></section>
+
+<!-- HANDOUTS -->
+<section id="handouts"><div class="wrap">
+  <h2>Print-ready handouts</h2>
+  <p class="lead">Onyx-branded, single-page PDFs to hand out on walk-ups and follow-ups. Fill in your contact info and photos first (see the how-to).</p>
+  <div class="handouts">
+    <a class="ho" href="marketing/leave-behind.pdf"><div class="t">◆ Leave-behind flyer (PDF)</div><p>One-page pitch: value props, services, the free-trial offer, and a contact footer with a QR slot.</p></a>
+    <a class="ho" href="marketing/before-after.pdf"><div class="t">◆ Before/after sheet (PDF)</div><p>Portfolio template with three before/after slots — drop in your real photos and it becomes your strongest closer.</p></a>
+  </div>
+  <p class="lead" style="margin-top:14px;font-size:13.5px">How to fill them in &amp; re-print: <a href="marketing/README.md">marketing/README.md</a></p>
+</div></section>
+
+<footer><div class="wrap">
+  <p><b>Methodology &amp; caveats.</b> These 79 prospects were assembled from public web sources within ~15 miles of downtown Dallas (in-zone: Dallas, Irving/Las Colinas, Grand Prairie, Mesquite, Garland, Richardson, Farmers Branch, Carrollton, Addison, Cedar Hill, DeSoto, Duncanville; excluded: Plano, Frisco, McKinney, Lewisville, Fort Worth). Confidence flags: <b>High</b> = existence, location &amp; fleet signal confirmed; <b>Medium</b> = real but address/fleet count not fully cross-checked; <b>Low</b> = thin signal, verify first.</p>
+  <p>Treat this as a strong starting point, not gospel: <b>verify each address and phone on its source link before driving</b>, and confirm inferred fleet sizes on the first call. Re-run a segment search any time the list thins out.</p>
+  <p>Prepared for Onyx Detail Collective · Phase 1 (research + outreach). Phase 2 — the go-to-market plan — builds on the call data Rob gathers working this list.</p>
+</div></footer>
+
+<script>
+const SEGS={deal:'Dealers & Auctions',svc:'Service Fleets',rent:'Rental·Limo·Medical',prop:'Property·Hospitality',spec:'Trades·Specialty'};
+const DATA=[
+{name:"United Caterers",seg:"spec",sub:"Food-truck commissary",city:"Grand Prairie",signal:"75+ owned trucks + ~100 indie trucks on one 4-acre yard",angle:"Fleet/ops mgr; (972) 264-1961",conf:"High",pri:1,url:"http://www.unitedcaterers.com/"},
+{name:"Manheim Dallas",seg:"deal",sub:"Auto auction",city:"SW Dallas · 5333 W. Kiest Blvd",signal:"Thousands of units; constant sale-prep recon",angle:"Recon/lot mgr; overflow sale-prep",conf:"High",pri:1,url:"https://site.manheim.com/en/locations/us-locations/manheim-dallas.html"},
+{name:"Hot Shot Final Mile",seg:"spec",sub:"Courier / last-mile",city:"Dallas · 70k sq ft warehouse",signal:"Sprinters, cargo vans, pickups, 26' box trucks; 250+ drivers",angle:"833-FINAL-MILE; Dallas fleet/ops mgr",conf:"High",pri:1,url:"https://hotshotfinalmile.com/dallas/"},
+{name:"Riddell Plumbing",seg:"svc",sub:"Plumbing",city:"Mesquite",signal:"60+ running trucks, 160+ employees",angle:"Owner; keep 60 wrapped trucks photo-ready",conf:"High",pri:1,url:"https://www.riddellplumbing.com/about/"},
+{name:"America's Auto Auction – Dallas",seg:"deal",sub:"Auto auction",city:"Irving · 219 N Loop 12",signal:"Weekly dealer/fleet/INOP sales (Tue & Thu)",angle:"Ops/recon manager",conf:"High",pri:0,url:"https://www.americasaa.com/locations/dallas/"},
+{name:"Alliance Auto Auction – Dallas",seg:"deal",sub:"Auto auction",city:"NW Dallas · 9426 Lakefield Blvd",signal:"Independent dealer remarketing; consignors detail pre-block",angle:"Auction GM / consignment desk",conf:"High",pri:0,url:"https://www.allianceautoauction.com/auctions/dallas-tx/"},
+{name:"Clay Cooley Chevrolet",seg:"deal",sub:"Franchise dealer",city:"E. Dallas · 9301 E R L Thornton",signal:"117-pt recon on used inventory; Thornton dealer row",angle:"Used-car / recon manager",conf:"High",pri:1,url:"https://www.yelp.com/biz/clay-cooley-chevrolet-dallas"},
+{name:"Cowboy Toyota",seg:"deal",sub:"Franchise dealer",city:"E. Dallas · 9525 E R L Thornton",signal:"Large new + used recon, across from Clay Cooley",angle:"Pre-owned recon manager",conf:"High",pri:0,url:"https://www.cowboytoyota.com/dealership/directions.htm"},
+{name:"Graff Chevrolet",seg:"deal",sub:"Franchise dealer",city:"Grand Prairie · 1405 E Main St",signal:"Family franchise, large used inventory; E. Main cluster",angle:"Used-car / recon manager",conf:"High",pri:0,url:"https://www.graffchevy.com/used-car-dealer-grand-prairie-tx/"},
+{name:"Toyota of Irving",seg:"deal",sub:"Franchise dealer",city:"Irving · 1999 W Airport Fwy",signal:"Large franchise, big used inventory; 183 corridor",angle:"Used-car / recon manager",conf:"High",pri:0,url:"https://www.toyotaofirving.com/used-vehicles/"},
+{name:"Clay Cooley Kia",seg:"deal",sub:"Franchise dealer",city:"Irving · 1247 E Airport Fwy",signal:"New + pre-owned recon; 183 Irving corridor",angle:"Pre-owned recon manager",conf:"Medium",pri:0,url:"https://us.centralindex.com/company/63200942fee4bce2c1fbe22b1a99e929/clay-cooley-kia/irving"},
+{name:"Alpha Autoplex",seg:"deal",sub:"Independent lot",city:"N. Stemmons · 3090 N Stemmons",signal:"Independent used lot on the Stemmons corridor",angle:"Owner / sales manager",conf:"High",pri:0,url:"https://www.alphaautoplex.com/"},
+{name:"Dallas Cars of Texas",seg:"deal",sub:"Independent lot",city:"Harry Hines · 11616",signal:"Dense Harry Hines wholesale strip",angle:"Owner / lot manager",conf:"High",pri:1,url:"https://dallascarsoftexas.com/"},
+{name:"Makka Auto Sales",seg:"deal",sub:"Independent lot",city:"Harry Hines · 11652",signal:"Same Harry Hines cluster (next door)",angle:"Owner",conf:"High",pri:0,url:"https://www.makkaautosalestx.com/"},
+{name:"Global Carz",seg:"deal",sub:"Independent lot",city:"Harry Hines · 11050",signal:"Independent used dealer, Harry Hines strip",angle:"Owner / manager",conf:"High",pri:0,url:"https://www.globalcarzdallas.com/location-and-directions"},
+{name:"Drive Casa – Harry Hines",seg:"deal",sub:"BHPH chain",city:"Harry Hines · 10507",signal:"Multi-location chain; every unit reconditioned",angle:"Corporate/regional ops — pitch all lots",conf:"High",pri:0,url:"https://www.drivecasa.com/harry-hines"},
+{name:"Drive Casa – Garland",seg:"deal",sub:"BHPH chain",city:"Garland",signal:"Multi-point recon on every car",angle:"Same corporate contact; bundle lots",conf:"Medium",pri:0,url:"https://www.drivecasa.com/used-cars-for-sale-in-garland/"},
+{name:"CityWide Motors",seg:"deal",sub:"BHPH lot",city:"Garland · 1910 Forest Lane",signal:"Forest Lane cluster; steady turnover since 2016",angle:"Owner / GM",conf:"High",pri:1,url:"https://citywidedfw.com/visit-citywide-motors-garland-tx/"},
+{name:"The Car Network",seg:"deal",sub:"BHPH lot",city:"Garland · 1840 Forest Lane",signal:"Next door to CityWide on Forest Lane",angle:"Owner",conf:"High",pri:0,url:"https://www.dfwcarnetwork.com/"},
+{name:"Cars and Credit Master",seg:"deal",sub:"BHPH lot",city:"Garland · 4045 Forest Lane",signal:"Same Forest Lane corridor",angle:"Owner / manager",conf:"Medium",pri:0,url:"https://www.carsmaster.com/"},
+{name:"Action Motors",seg:"deal",sub:"Independent lot",city:"Oak Cliff · 1009 E Jefferson",signal:"Since 1984; dense Jefferson Blvd strip",angle:"Owner (long-tenured)",conf:"High",pri:0,url:"https://action-motors-tx-2.hub.biz/"},
+{name:"Vaquero Motors",seg:"deal",sub:"BHPH lot",city:"Oak Cliff · 945 E Jefferson",signal:"Jefferson Blvd cluster, 1 block from Action Motors",angle:"Owner",conf:"Medium",pri:0,url:"https://www.vaqueromotors.com/"},
+{name:"Star Auto Group LLC",seg:"deal",sub:"Independent lot",city:"Grand Prairie · 2111 E Main St",signal:"Independent lot on E. Main dealer street",angle:"Owner / sales manager",conf:"High",pri:0,url:"https://starautogroupllc.com/"},
+{name:"Baker Brothers Plumbing, Air & Electric",seg:"svc",sub:"Plumbing/HVAC/Electrical",city:"Dallas · 2615 Big Town Blvd",signal:"22+ tracked trucks, 200–500 employees",angle:"Facilities / fleet manager",conf:"High",pri:1,url:"https://bakerbrothersplumbing.com/about-us/"},
+{name:"Rescue Air Heating, Cooling & Plumbing",seg:"svc",sub:"HVAC/Plumbing",city:"Dallas · 9639 Greenville Ave",signal:"Multiple wrapped trucks; 596 reviews",angle:"Owner; brand-image angle",conf:"High",pri:0,url:"https://www.rescueairtx.com/"},
+{name:"Chapman Air & Heat",seg:"svc",sub:"HVAC",city:"Dallas / DFW",signal:"6 fully-equipped trucks (explicit)",angle:"Owner-direct; easy bi-weekly route",conf:"High",pri:1,url:"https://chapmanair.com/"},
+{name:"Romney Pest Control",seg:"svc",sub:"Pest control",city:"Irving · 3880 Valley View Ln",signal:"Route trucks 200–300 mi/day; actively hiring",angle:"Route-truck cleaning program",conf:"High",pri:1,url:"https://romneypestcontrol.com/career-opportunities/"},
+{name:"Add-All Electric",seg:"svc",sub:"Electrical",city:"DFW (Dallas)",signal:"Fleet of 5 bucket trucks",angle:"Owner-direct; bucket-truck wash",conf:"Medium",pri:1,url:"https://addallelectric.com/"},
+{name:"Kevco Electrical Inc",seg:"svc",sub:"Electrical",city:"Dallas",signal:"Fleet of service vehicles; 30 yrs",angle:"Fleet appearance for commercial credibility",conf:"Medium",pri:0,url:"https://kevcoelectrical.com/"},
+{name:"Berkeys Plumbing, A/C & Electrical",seg:"svc",sub:"Multi-trade",city:"Dallas branch",signal:"4 offices, fully-stocked trucks",angle:"Target the Dallas branch (HQ Southlake is out)",conf:"Medium",pri:0,url:"https://www.berkeys.com/dallas-tx/"},
+{name:"Hooper Plumbing & Air Conditioning",seg:"svc",sub:"Plumbing/HVAC",city:"Dallas",signal:"Since 1923; fully-stocked trucks",angle:"Heritage-brand angle",conf:"Medium",pri:0,url:"https://www.hooperplumbing.com/"},
+{name:"Pest Management of Texas",seg:"svc",sub:"Pest control",city:"Dallas",signal:"Markets 'clearly marked trucks'",angle:"Values-aligned pitch (already cares)",conf:"Medium",pri:0,url:"https://www.pestcontroldallastx.com/commercial/"},
+{name:"Mr. Appliance of Carrollton",seg:"svc",sub:"Appliance repair",city:"Carrollton",signal:"Branded vans across N. Dallas",angle:"Franchise owner; recurring van-wash",conf:"Medium",pri:0,url:"https://www.mrappliance.com/carrollton/geo/north-dallas/"},
+{name:"Guinco Service",seg:"svc",sub:"Appliance repair",city:"DFW",signal:"110+ employees, 400+ homes/day",angle:"Scheduled fleet detailing",conf:"Medium",pri:0,url:"https://guinco.com/"},
+{name:"Complete Overhead Door",seg:"svc",sub:"Garage doors",city:"Dallas / DFW",signal:"Mobile branded vans across metroplex",angle:"Branded-van program",conf:"Medium",pri:0,url:"https://www.completeoverhead.com/"},
+{name:"Pierce Appliance Repair",seg:"svc",sub:"Appliance repair",city:"Dallas",signal:"Branded service vans",angle:"Owner-accessible; entry account",conf:"Low",pri:0,url:"https://www.pierceappliancerepair.com/dallas-tx/"},
+{name:"Roma Exotic Rentals",seg:"rent",sub:"Exotic rental",city:"Dallas",signal:"~50 exotic/luxury vehicles",angle:"214-865-6159; weekly fleet contract",conf:"High",pri:1,url:"https://www.romaexoticrentals.com/exotics"},
+{name:"Platinum Motorcars",seg:"rent",sub:"Exotic rental",city:"Dallas · 2323 Cedar Springs Rd",signal:"~12 exotics, open 24/7",angle:"469-805-7929; between-rental detailing",conf:"High",pri:1,url:"https://platinummotorcars.com/rental-fleet/"},
+{name:"Black Label Exotics",seg:"rent",sub:"Exotic rental",city:"Dallas · 1845 Woodall Rodgers",signal:"14+ models (Rolls, Bentley, Lambo)",angle:"469-200-0286; recurring post-rental detail",conf:"High",pri:1,url:"https://blacklabelexotics.com/luxury-car-rental-dallas/"},
+{name:"Accurate Shuttle & Limousine",seg:"rent",sub:"Charter / party bus",city:"Dallas",signal:"6+ classes: Sprinter, party bus, mini-coaches",angle:"855-624-8866; on-site big-vehicle interiors",conf:"High",pri:1,url:"https://www.accurateshuttle.com/dallas-charter-shuttle-party-bus-rental"},
+{name:"Metropolitan Shuttle (Dallas)",seg:"rent",sub:"Corporate shuttle",city:"Dallas",signal:"20+ yrs; daily employee shuttles",angle:"972-497-1074; weekly interior cleaning",conf:"Medium",pri:0,url:"https://www.metropolitanshuttle.com/dallas-charter-bus/"},
+{name:"Prime Limo",seg:"rent",sub:"Limo / black car",city:"Dallas",signal:"Sedans, SUVs, stretch limos, party/coach buses",angle:"Recurring interior detail between charters",conf:"Medium",pri:0,url:"https://www.primelimo.com/"},
+{name:"Black Car Service Dallas",seg:"rent",sub:"Limo / black car",city:"Dallas",signal:"Sedans, SUVs, limos since 2010",angle:"Fleet detail program via contact form",conf:"Medium",pri:0,url:"https://blackcarservicedallas.com/"},
+{name:"Black Car Everywhere",seg:"rent",sub:"Limo / black car",city:"Dallas",signal:"Black sedans + SUVs; dark paint shows swirls",angle:"Swirl-free maintenance + interior",conf:"Medium",pri:0,url:"https://blackcareverywhere.com/hourly-car-service-dallas/"},
+{name:"Ash Limousine & Charter Buses",seg:"rent",sub:"Charter bus",city:"Dallas",signal:"Charter buses, corporate/event; can't use car washes",angle:"On-site coach interior detailing",conf:"Medium",pri:0,url:"https://www.ashlimoandcharterbuses.com/"},
+{name:"Paramount Medical Transport",seg:"rent",sub:"NEMT",city:"Dallas–FW",signal:"Multi-van fleet, 24/7; sanitizing non-negotiable",angle:"214-396-9791; recurring sanitize + detail",conf:"Medium",pri:1,url:"https://www.paramountnemt.org/"},
+{name:"M&H NEMT Service LLC",seg:"rent",sub:"NEMT",city:"Dallas–FW",signal:"Wheelchair-accessible fleet; frequent deep-clean",angle:"Scheduled interior sanitizing",conf:"Medium",pri:0,url:"https://mnhnemt.com/"},
+{name:"UltraCare Transport",seg:"rent",sub:"NEMT",city:"Dallas / DFW",signal:"TX HHSC-approved NEMT fleet",angle:"Compliance-grade recurring detailing",conf:"Medium",pri:0,url:"https://ultracaretransport.com/"},
+{name:"Crown Medical Transportation",seg:"rent",sub:"NEMT",city:"Dallas–FW",signal:"NEMT + wheelchair fleet",angle:"Fleet sanitize/detail plan",conf:"Medium",pri:0,url:"https://crownmedical-transportation.com/"},
+{name:"Dash Medical Transportation",seg:"rent",sub:"NEMT",city:"Dallas",signal:"Locally based NEMT fleet",angle:"Standing interior-detail schedule",conf:"Medium",pri:0,url:"https://dashnemt.com/"},
+{name:"Four Seasons Resort & Club Las Colinas",seg:"prop",sub:"Hotel / resort",city:"Irving (Las Colinas)",signal:"Resort + 36 holes; guest transport, valet, grounds",angle:"Director of Engineering / Rooms",conf:"High",pri:0,url:"https://www.fourseasons.com/dallas/golf/courses/tpc_four_seasons_las_colinas/"},
+{name:"DoubleTree by Hilton DFW Airport North",seg:"prop",sub:"Hotel",city:"Irving (~15 mi, edge)",signal:"24-hr airport shuttle (multiple vans)",angle:"Chief Engineer / GM",conf:"High",pri:0,url:"https://www.hilton.com/en/hotels/dfwindt-doubletree-dallas-dfw-airport-north/"},
+{name:"Omni Las Colinas Hotel",seg:"prop",sub:"Hotel",city:"Irving (Las Colinas)",signal:"Valet + house vehicles (confirm shuttle)",angle:"Chief Engineer / Front Office Mgr",conf:"Medium",pri:0,url:"https://www.omnihotels.com/hotels/dallas-las-colinas"},
+{name:"La Quinta – Las Colinas",seg:"prop",sub:"Hotel",city:"Irving (Las Colinas)",signal:"Free DFW airport shuttle (Mon–Fri)",angle:"General Manager",conf:"Medium",pri:0,url:"https://www.wyndhamhotels.com/laquinta/irving-texas/la-quinta-dallas-las-colinas/overview"},
+{name:"Las Colinas Country Club",seg:"prop",sub:"Country club",city:"Irving (Las Colinas)",signal:"Valet, member-services carts, grounds fleet",angle:"Clubhouse Mgr / Dir. of Agronomy",conf:"Medium",pri:0,url:"https://www.invitedclubs.com/clubs/las-colinas-country-club"},
+{name:"Hackberry Creek Country Club",seg:"prop",sub:"Country club",city:"Irving (Las Colinas)",signal:"Grounds/maintenance + valet vehicles",angle:"GM / Golf Course Superintendent",conf:"Medium",pri:0,url:"https://www.invitedclubs.com/clubs/hackberry-creek-country-club"},
+{name:"Lakewood Country Club",seg:"prop",sub:"Country club",city:"E. Dallas",signal:"Valet + grounds/maintenance fleet, near downtown",angle:"Clubhouse Mgr / Grounds Superintendent",conf:"Medium",pri:0,url:"https://www.lakewoodcc.com/"},
+{name:"Dallas Country Club",seg:"prop",sub:"Country club",city:"Highland Park",signal:"Prestige club; valet + grounds fleet",angle:"GM / Director of Grounds",conf:"Medium",pri:0,url:"https://www.thedallascc.org/"},
+{name:"Westdale Asset Management",seg:"prop",sub:"Multifamily mgmt",city:"Dallas HQ",signal:"~44 properties / ~12,000 units",angle:"VP of Ops / Director of Facilities",conf:"High",pri:1,url:"https://www.multihousingnews.com/top-10-dallas-apartment-owners/"},
+{name:"Knightvest Residential",seg:"prop",sub:"Multifamily mgmt",city:"Dallas HQ",signal:"33 properties / ~9,500 units",angle:"Dir. of Maintenance / Regional Facilities",conf:"High",pri:0,url:"https://www.multihousingnews.com/top-10-dallas-apartment-owners/"},
+{name:"Lincoln Property Company",seg:"prop",sub:"Multifamily mgmt",city:"Dallas HQ",signal:"10,500+ apartments / 22 properties",angle:"Regional Property Mgr / Facilities",conf:"High",pri:0,url:"https://www.multihousingnews.com/top-10-dallas-apartment-owners/"},
+{name:"Highmark Residential",seg:"prop",sub:"Multifamily mgmt",city:"Dallas HQ",signal:"100,000+ residents, ~1,500 associates",angle:"Director of Ops / Facilities",conf:"Medium",pri:0,url:"https://www.inven.ai/company-lists/top-25-residential-property-management-companies-in-texas"},
+{name:"Edgemere",seg:"prop",sub:"Senior living",city:"Dallas (Preston Hollow)",signal:"Confirmed resident + medical shuttle fleet",angle:"Transportation Coordinator / Facilities",conf:"High",pri:0,url:"https://edgemerelife.com/"},
+{name:"CC Young Senior Living",seg:"prop",sub:"Senior living",city:"Dallas (White Rock Lake)",signal:"CCRC resident transportation/shuttle",angle:"Dir. of Plant Ops / Transportation",conf:"Medium",pri:0,url:"https://www.ccyoung.org/"},
+{name:"UT Dallas",seg:"prop",sub:"University",city:"Richardson",signal:"Campus fleet 6+ vehicles + transport dept",angle:"Parking & Transportation / Fleet Coord.",conf:"Medium",pri:0,url:"https://news.utdallas.edu/campus-community/new-transportation-options-make-it-easier-to-get-a/"},
+{name:"BrightView Landscape (Dallas)",seg:"spec",sub:"Commercial landscaping",city:"Dallas · 11439 Denton Dr",signal:"National's largest; branded truck-and-trailer fleets",angle:"Branch / Ops Manager at the yard",conf:"High",pri:0,url:"https://www.brightview.com/local/dallas-tx/landscape-services"},
+{name:"Terracare Associates",seg:"spec",sub:"Commercial landscaping",city:"DFW metro",signal:"30+ yrs commercial ops; maintenance fleet",angle:"DFW branch ops manager",conf:"Medium",pri:0,url:"https://myterracare.com/about-us/locations/dallas-fort-worth-texas-metroplex-area/"},
+{name:"Yellowstone Landscape",seg:"spec",sub:"Commercial landscaping",city:"DFW",signal:"Large regional, multi-crew fleet",angle:"Branch manager",conf:"Medium",pri:0,url:"https://www.yellowstonelandscape.com/locations/dallas-texas"},
+{name:"EarthTones Design Inc",seg:"spec",sub:"Commercial landscaping",city:"DFW",signal:"'A fleet of late-model equipment'",angle:"Site contact form",conf:"Medium",pri:0,url:"https://downtobid.com/contractors/landscaping/dallas"},
+{name:"Truck Yard Commissary Kitchen",seg:"spec",sub:"Food-truck commissary",city:"Dallas (Lower Greenville)",signal:"Many food-truck owners; daily visits required",angle:"Commissary mgr — member perk",conf:"Medium",pri:0,url:"https://truckyardcommissarykitchen.com/"},
+{name:"U.S. Food Trucks",seg:"spec",sub:"Food-truck commissary",city:"Dallas · 7508 Ambassador Row",signal:"City-approved commissary; daily truck traffic",angle:"Walk-in / call operator",conf:"Medium",pri:0,url:"https://discover.texasrealfood.com/food-truck-laws-across-america/food-truck-laws-dallas-texas"},
+{name:"Dallas Courier",seg:"spec",sub:"Courier / box-truck",city:"Dallas",signal:"Owns its straight/box trucks (not a broker)",angle:"Fleet appearance program via form",conf:"Medium",pri:0,url:"https://www.dallascourier.com/dallas-box-truck-deliveries"},
+{name:"Pace USA (Dallas)",seg:"spec",sub:"Courier / last-mile",city:"Dallas",signal:"Light vehicles, sprinter/cargo vans, box trucks",angle:"Dallas branch via site",conf:"Medium",pri:0,url:"https://pace-usa.com/dallas/"},
+{name:"KB Towing Service",seg:"spec",sub:"Towing",city:"Garland / Mesquite / Dallas",signal:"Flatbed + wheel-lift fleet, multi-city",angle:"Owner-operator via site",conf:"High",pri:0,url:"https://www.kbtowingtx.com/"},
+{name:"Dallas Tow & Go",seg:"spec",sub:"Towing",city:"Garland / Mesquite / Irving",signal:"Multi-truck fleet across 4+ cities",angle:"Dispatch / contact",conf:"Medium",pri:0,url:"https://dallastowandgo.com/towing-service-in-garland-tx/"},
+{name:"CTR Incident Towing",seg:"spec",sub:"Towing",city:"Garland",signal:"'Newest fleet of tow trucks'; heavy-equipment",angle:"Site contact form",conf:"Medium",pri:0,url:"https://ctrincidenttowing.com/service-area/garland/"},
+{name:"Blue Compass RV Dallas",seg:"spec",sub:"RV dealership",city:"Mesquite · I-30",signal:"Large lot; new + used RV recon",angle:"Service/Recon or Used Inventory mgr",conf:"High",pri:0,url:"https://www.bluecompassrv.com/locations/texas/dallas"},
+{name:"RideNow Powersports Dallas",seg:"spec",sub:"Powersports dealer",city:"Dallas · 9938 Plano Rd",signal:"Largest used-moto inventory in N. Texas; PWC/ATV",angle:"Used Inventory / Recon mgr; (469) 991-1643",conf:"High",pri:0,url:"https://www.ridenowdallas.com/"},
+{name:"Holiday World of Dallas",seg:"spec",sub:"RV dealership",city:"Mesquite",signal:"Multi-brand RV dealer, sizeable inventory",angle:"Service / recon department",conf:"Medium",pri:0,url:"https://www.hwhrv.com/mesquite-texas"}
+];
+
+const CONF={High:'b-hi',Medium:'b-med',Low:'b-lo'};
+const tbody=document.getElementById('rows'), q=document.getElementById('q'), count=document.getElementById('count');
+let seg='all', sortK=null, sortDir=1;
+const confRank={High:3,Medium:2,Low:1};
+function render(){
+  const term=q.value.trim().toLowerCase();
+  let list=DATA.filter(r=>{
+    if(seg==='pri' && !r.pri)return false;
+    if(seg!=='all' && seg!=='pri' && r.seg!==seg)return false;
+    if(!term)return true;
+    return (r.name+' '+r.sub+' '+r.city+' '+r.signal).toLowerCase().includes(term);
+  });
+  if(sortK){
+    list=list.slice().sort((a,b)=>{
+      if(sortK==='conf')return (confRank[a.conf]-confRank[b.conf])*sortDir;
+      let av=sortK==='seg'?SEGS[a.seg]:a[sortK], bv=sortK==='seg'?SEGS[b.seg]:b[sortK];
+      return String(av).localeCompare(String(bv))*sortDir;
+    });
+  }else{
+    list=list.slice().sort((a,b)=>(b.pri-a.pri)); // priority first by default
+  }
+  tbody.innerHTML=list.map(r=>`
+    <tr>
+      <td><div class="co">${r.pri?'<span class="star">★</span>':''}${r.name}</div><div class="sub2">${r.sub}</div></td>
+      <td><span class="badge b-${r.seg}">${SEGS[r.seg]}</span></td>
+      <td class="muted">${r.city}</td>
+      <td>${r.signal}</td>
+      <td class="muted">${r.angle}</td>
+      <td><span class="badge ${CONF[r.conf]}">${r.conf}</span></td>
+      <td><a class="src" href="${r.url}" target="_blank" rel="noopener">Source →</a></td>
+    </tr>`).join('');
+  count.textContent=list.length+' of '+DATA.length;
+}
+document.querySelectorAll('#seg button').forEach(b=>b.onclick=()=>{
+  seg=b.dataset.seg;
+  document.querySelectorAll('#seg button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');render();
+});
+document.querySelectorAll('thead th[data-k]').forEach(th=>th.onclick=()=>{
+  const k=th.dataset.k;
+  if(sortK===k){sortDir*=-1}else{sortK=k;sortDir=1}
+  document.querySelectorAll('thead th .arw').forEach(a=>a.textContent='');
+  th.querySelector('.arw').textContent=sortDir>0?'▲':'▼';
+  render();
+});
+q.oninput=render;
+// fill stat counts from data
+document.getElementById('s-total').textContent=DATA.length;
+document.getElementById('s-pri').textContent=DATA.filter(r=>r.pri).length;
+render();
+</script>
+</body>
+</html>

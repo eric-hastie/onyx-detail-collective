@@ -1,5 +1,10 @@
 # Onyx Detail Collective — Fleet Work Playbook
 
+### 🌐 Live site → **https://eric-hastie.github.io/onyx-detail-collective/**
+The interactive version — searchable/sortable prospect list, outreach scripts, pricing, and handouts in one page. Send Rob this link.
+
+---
+
 **Goal:** land recurring **fleet detailing** accounts within a **15-mile radius of downtown Dallas**, run as a **mobile** operation (we come to them).
 
 This repo is Rob's working kit. It has two things right now:
