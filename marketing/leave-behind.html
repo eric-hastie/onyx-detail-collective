@@ -6,7 +6,7 @@
 <style>
   :root{
     --ink:#0b0b0d; --charcoal:#16171a; --slate:#3a3d44;
-    --gold:#c9a24b; --gold-soft:#e7d4a3; --paper:#ffffff; --mist:#f4f3f0;
+    --gold:#8f9197; --gold-soft:#d7dade; --paper:#ffffff; --mist:#f4f3f0;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   @page{ size:letter; margin:0; }
@@ -33,21 +33,21 @@
   .tagline b{ font-weight:700; color:var(--gold-soft); }
 
   /* ---- body ---- */
-  main{ padding:.30in .7in 0; flex:1; }
-  .lead{ font-size:11pt; color:var(--slate); line-height:1.5; margin-bottom:.22in; max-width:6.6in; }
+  main{ padding:.24in .7in 0; flex:1; }
+  .lead{ font-size:11pt; color:var(--slate); line-height:1.5; margin-bottom:.16in; max-width:6.6in; }
 
-  .props{ display:flex; gap:.28in; margin-bottom:.24in; }
+  .props{ display:flex; gap:.28in; margin-bottom:.16in; }
   .prop{ flex:1; background:var(--mist); border-radius:8px; padding:.20in .22in; border-left:3px solid var(--gold); }
   .prop h3{ font-size:11.5pt; color:var(--ink); margin-bottom:.05in; }
   .prop p{ font-size:9pt; color:var(--slate); line-height:1.4; }
 
-  .section-title{ font-size:9.5pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); font-weight:700; margin:.05in 0 .14in; }
+  .section-title{ font-size:9.5pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); font-weight:700; margin:.02in 0 .10in; }
 
-  .serve{ font-size:10.5pt; color:var(--ink); line-height:1.7; margin-bottom:.22in; }
+  .serve{ font-size:10.5pt; color:var(--ink); line-height:1.6; margin-bottom:.16in; }
   .serve span{ display:inline-block; background:var(--ink); color:#fff; border-radius:20px; padding:.04in .16in; margin:0 .06in .08in 0; font-size:8.5pt; letter-spacing:.02em; }
 
-  table.services{ width:100%; border-collapse:collapse; margin-bottom:.22in; }
-  table.services td{ padding:.09in .16in; border-bottom:1px solid #e4e2db; vertical-align:top; }
+  table.services{ width:100%; border-collapse:collapse; margin-bottom:.14in; }
+  table.services td{ padding:.07in .16in; border-bottom:1px solid #e4e2db; vertical-align:top; }
   table.services tr td:first-child{ font-weight:700; color:var(--ink); width:2.0in; font-size:10pt; }
   table.services tr td:last-child{ color:var(--slate); font-size:9.5pt; line-height:1.4; }
   table.services tr:last-child td{ border-bottom:none; }
@@ -55,7 +55,7 @@
   .cta{
     background:linear-gradient(100deg,var(--charcoal),var(--ink));
     color:#fff; border-radius:10px; padding:.26in .3in; display:flex;
-    align-items:center; gap:.3in; margin-bottom:.20in;
+    align-items:center; gap:.3in; margin-bottom:.10in;
     border:1px solid var(--gold);
   }
   .cta .big{ font-size:15pt; font-weight:800; line-height:1.25; }
@@ -76,15 +76,16 @@
   <header>
     <div class="brand">
       <div class="logo-mark"><span class="o">◆</span> ONYX</div>
-      <div class="brand-sub">Detail Collective</div>
+      <div class="brand-sub">Detail Collective · Fleet</div>
     </div>
     <div class="tagline">We come to your fleet. <b>Your vehicles never leave the yard.</b></div>
   </header>
 
   <main>
     <p class="lead">
-      Onyx Detail Collective is a <b>mobile</b> detailing service for Dallas-area fleets. We detail your trucks,
-      vans, and vehicles <b>on-site, on a set schedule</b>—so your fleet stays sharp without ever missing a day of work.
+      The same <b>5-star detailing</b> Dallas trusts for its nicest cars — now keeping your <b>fleet</b> sharp.
+      Onyx is a fully <b>mobile</b> service: we detail your trucks, vans, and vehicles <b>on-site, on a set
+      schedule</b>, so your fleet stays sharp without ever missing a day of work.
     </p>
 
     <div class="props">
@@ -104,30 +105,30 @@
       <span>Courier · Towing · RV</span>
     </div>
 
-    <div class="section-title">Services</div>
+    <div class="section-title">Onyx Fleet packages</div>
     <table class="services">
-      <tr><td>Maintenance Wash</td><td>Exterior wash, wheels, windows, quick wipe-down. Keeps a branded fleet photo-ready.</td></tr>
-      <tr><td>Standard Fleet Detail</td><td>Full wash plus interior vacuum, wipe-down, and glass.</td></tr>
-      <tr><td>Deep / Recon Detail</td><td>Complete interior &amp; exterior, shampoo/extraction, dressing. Ideal for sale-prep and reconditioning.</td></tr>
-      <tr><td>Sanitize Add-On</td><td>Disinfectant treatment for patient-transport &amp; shared vehicles—built for compliance.</td></tr>
+      <tr><td>Onyx Fleet — Maintenance</td><td>Exterior wash, wheels, glass + quick interior wipe-down. Keeps a branded fleet photo-ready.</td></tr>
+      <tr><td>Onyx Fleet — Full Detail</td><td>Complete wash plus full interior vacuum, wipe-down, and glass.</td></tr>
+      <tr><td>Onyx Recon-Ready</td><td>Per-unit deep detail — interior &amp; exterior, shampoo/extraction, dressing. Sale-prep quality.</td></tr>
+      <tr><td>Onyx Sanitize+</td><td>Documented disinfectant treatment for patient-transport &amp; shared vehicles—built for compliance.</td></tr>
     </table>
 
     <div class="cta">
       <div>
         <div class="big">Start with <span class="g">one vehicle—free look.</span></div>
-        <div class="small">See the work firsthand. If it's a fit, we set up a schedule. If not, no harm done.</div>
+        <div class="small">★★★★★ 5.0 · 16 reviews on Google. See the work firsthand — if it's a fit, we set a schedule. If not, no harm done.</div>
       </div>
     </div>
   </main>
 
   <footer>
     <div class="contact">
-      <div class="name">Rob &mdash; <span style="font-weight:400;color:#fff;">[ROB&rsquo;S LAST NAME]</span></div>
-      <div class="row">📞 <span class="ph">[YOUR PHONE]</span></div>
-      <div class="row">✉ [YOUR EMAIL]&nbsp;&nbsp;&nbsp;◆ [@ONYXDETAILCOLLECTIVE]</div>
-      <div class="radius">Serving within 15 miles of downtown Dallas</div>
+      <div class="name">Robert &mdash; <span style="font-weight:400;color:#fff;">Onyx Detail Collective</span></div>
+      <div class="row">📞 <span class="ph">(214) 506-0762</span></div>
+      <div class="row">✉ onyxdetaildfw.com&nbsp;&nbsp;&nbsp;◆ @onyxdetaildfw</div>
+      <div class="radius">Mobile · serving within 15 miles of downtown Dallas</div>
     </div>
-    <div class="qr">QR CODE<br>(link to site or<br>booking page)</div>
+    <div class="qr">QR CODE<br>(link to onyxdetaildfw.com<br>or booking page)</div>
   </footer>
 </div>
 </body>

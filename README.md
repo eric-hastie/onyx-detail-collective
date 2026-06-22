@@ -3,6 +3,8 @@
 ### 🌐 Live site → **https://eric-hastie.github.io/onyx-detail-collective/**
 The interactive version — searchable/sortable prospect list, outreach scripts, pricing, and handouts in one page. Send Rob this link.
 
+**Phase 2 — the 90-day GTM plan → [gtm.html](gtm.html)** (live: https://eric-hastie.github.io/onyx-detail-collective/gtm.html) — positioning, Onyx Fleet packages, pricing model to $8–12k/mo, the acquisition engine, and a week-by-week rollout.
+
 ---
 
 **Goal:** land recurring **fleet detailing** accounts within a **15-mile radius of downtown Dallas**, run as a **mobile** operation (we come to them).

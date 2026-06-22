@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Onyx Fleet — Go-To-Market Plan</title>
+<meta name="description" content="The 90-day go-to-market plan for Onyx Detail Collective's fleet line — positioning, packages, pricing, the acquisition engine, and a week-by-week rollout to a steady $8–12k/month.">
+<style>
+:root{
+  --bg:#0b0b0c; --panel:#141416; --panel2:#1b1b1e; --line:#2a2a2e;
+  --txt:#eceef1; --muted:#94959c; --pl:#c7cbd2; --pl-soft:#eef0f3;
+  --hi:#1f5f43; --hitxt:#7ff0c8; --med:#4a4632; --medtxt:#e8d39a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--pl);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+.nav{position:sticky;top:0;z-index:20;background:rgba(11,11,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:22px;height:56px}
+.nav .logo{font-weight:800;letter-spacing:.05em;font-size:16px;color:#fff}
+.nav .logo .d{color:var(--pl)}
+.nav a.link{color:var(--muted);font-size:13.5px;font-weight:600}
+.nav a.link:hover{color:var(--txt);text-decoration:none}
+.nav .spacer{flex:1}
+@media(max-width:820px){.nav a.link.opt{display:none}}
+
+header.hero{padding:58px 0 30px;border-bottom:1px solid var(--line);
+  background:radial-gradient(1100px 360px at 18% -10%, rgba(255,255,255,.06), transparent 60%)}
+.eyebrow{color:var(--pl);font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:12px;margin:0 0 14px}
+h1{font-size:40px;line-height:1.12;margin:0 0 14px;font-weight:780;letter-spacing:-.02em}
+h1 .d{color:var(--pl)}
+.sub{color:#cdd0d8;font-size:18px;max-width:740px;margin:0}
+.byline{margin-top:20px;color:var(--muted);font-size:14px}
+.byline b{color:var(--txt)}
+.target{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:32px 0 4px}
+.tcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.tcard .n{font-size:22px;font-weight:740;letter-spacing:-.01em;color:var(--pl-soft)}
+.tcard .l{color:var(--muted);font-size:12.5px;margin-top:4px}
+
+section{padding:46px 0 6px}
+.snum{color:var(--pl);font-weight:800;font-size:13px;letter-spacing:.12em}
+h2{font-size:25px;margin:6px 0 10px;letter-spacing:-.01em}
+.lead{color:#cdd0d8;max-width:800px;margin:0 0 22px}
+h3.kicker{color:var(--pl);font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin:28px 0 14px}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:860px){.grid3,.grid4{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid2,.grid3,.grid4,.target{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:17px 19px}
+.card h4{margin:0 0 6px;font-size:15px;color:var(--pl-soft)}
+.card p{margin:0;color:var(--muted);font-size:13.5px}
+.card.edge{border-left:3px solid var(--pl)}
+.card .pkgmeta{margin-top:10px;font-size:12px;color:var(--pl);font-weight:600}
+
+table.t{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0 6px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+table.t th{background:var(--panel2);color:var(--muted);text-align:left;padding:12px 14px;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid var(--line)}
+table.t td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+table.t tr:last-child td{border-bottom:0}
+table.t td.r,table.t th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+table.t tr.total td{background:var(--panel2);font-weight:700;color:var(--pl-soft)}
+table.t .b{color:var(--pl-soft);font-weight:650}
+
+.note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--pl);
+  border-radius:8px;padding:14px 16px;margin:18px 0;color:#cdd0d8;font-size:13.5px}
+
+/* timeline */
+.phase{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:14px;border-top:3px solid var(--pl)}
+.phase .hd{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.phase .days{font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--pl);text-transform:uppercase}
+.phase h4{margin:0;font-size:17px}
+.phase .goal{margin-left:auto;font-size:12.5px;color:var(--pl-soft);background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+.phase ul{margin:6px 0 0;padding-left:18px;color:#cdd0d8;font-size:13.5px}
+.phase li{margin:4px 0}
+
+.kpi{display:flex;gap:10px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kpi .dot{width:8px;height:8px;border-radius:50%;background:var(--pl);flex:none}
+.kpi b{color:var(--pl-soft)}.kpi span{color:var(--muted);font-size:13px}
+
+.agreement{background:var(--panel2);border:1px dashed var(--line);border-radius:12px;padding:20px 22px;font-size:13.5px;color:#dfe2e8}
+.agreement h4{margin:0 0 4px;color:var(--pl-soft)}
+.agreement .row{padding:7px 0;border-bottom:1px solid var(--line)}
+.agreement .row:last-child{border-bottom:0}
+.agreement .k{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+
+footer{border-top:1px solid var(--line);padding:30px 0 70px;color:var(--muted);font-size:13px;margin-top:34px}
+footer .wrap{max-width:820px}footer b{color:var(--txt)}
+.crumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.crumbs a{font-size:13px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 13px;color:var(--muted)}
+.crumbs a:hover{color:var(--txt);text-decoration:none;border-color:var(--pl)}
+</style>
+</head>
+<body>
+
+<div class="nav"><div class="wrap">
+  <span class="logo">◆ ONYX <span class="d">/</span> GTM Plan</span>
+  <span class="spacer"></span>
+  <a class="link" href="index.html">← Playbook</a>
+  <a class="link opt" href="#position">Positioning</a>
+  <a class="link opt" href="#packages">Packages</a>
+  <a class="link opt" href="#pricing">Pricing</a>
+  <a class="link opt" href="#engine">Acquisition</a>
+  <a class="link opt" href="#calendar">90-Day</a>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <p class="eyebrow">Onyx Detail Collective · Phase 2 · Go-To-Market</p>
+  <h1>Onyx Fleet <span class="d">—</span> the 90-day plan to a steady book</h1>
+  <p class="sub">How Robert turns the 79-prospect research into <b>$8–12k a month of recurring, predictable revenue</b> — by adding a business-facing fleet line to the brand Dallas already rates 5.0 stars, and working it on a simple weekly rhythm.</p>
+  <p class="byline">Built on: <b>solo, full-time</b> · goal = <b>steady recurring income</b> · <b>willing to invest</b> in growth · already has the rig, the brand, real clients &amp; a 5.0★ reputation.</p>
+  <div class="target">
+    <div class="tcard"><div class="n">$8–12k</div><div class="l">monthly target by day 90</div></div>
+    <div class="tcard"><div class="n">~6</div><div class="l">recurring fleet accounts</div></div>
+    <div class="tcard"><div class="n">5.0★ · 16</div><div class="l">reviews to build on</div></div>
+    <div class="tcard"><div class="n">1 brand</div><div class="l">Onyx, with a Fleet line</div></div>
+  </div>
+</div></header>
+
+<!-- 1 POSITIONING -->
+<section id="position"><div class="wrap">
+  <p class="snum">01</p><h2>Positioning &amp; the offer</h2>
+  <p class="lead">Keep <b>Onyx Detail Collective</b> exactly as it is — luxury mobile detailing, "pride in every detail." Add <b>Onyx Fleet</b> as a service line under the same name, so every fleet pitch borrows the 5.0★ reputation instead of starting from zero. Same craftsmanship; packaged for businesses.</p>
+  <div class="card edge" style="margin-bottom:14px">
+    <h4>The B2B promise</h4>
+    <p style="color:#cdd0d8">"The same 5-star detailing Dallas trusts for its nicest cars — now keeping your <b>fleet</b> sharp, on-site, on a schedule." Lead with <b>reliability, convenience, and proof</b> — never price.</p>
+  </div>
+  <h3 class="kicker">Why Onyx, for a fleet buyer</h3>
+  <div class="grid4">
+    <div class="card"><h4>Zero downtime</h4><p>Fully mobile rig — we come to your yard. Vehicles never leave to get cleaned.</p></div>
+    <div class="card"><h4>Owner-operated</h4><p>Robert does the work. Same hands, same standard, every visit — not rotating crews.</p></div>
+    <div class="card"><h4>Proven &amp; rated</h4><p>5.0★ across 16 Google reviews — "attention to detail," "convenience," "pride in craft."</p></div>
+    <div class="card"><h4>Predictable</h4><p>A set schedule and one monthly invoice. Reliability is the product.</p></div>
+  </div>
+  <div class="note"><b>Handling the "luxury = expensive" worry.</b> Fleet buyers hear "luxury" and brace for a high bill. Defuse it in the first sentence: "The luxury is in the <em>care</em>, not the price — fleet rates are built for volume." Then go straight to the free trial so the work speaks.</div>
+</div></section>
+
+<!-- 2 PACKAGES -->
+<section id="packages"><div class="wrap">
+  <p class="snum">02</p><h2>Productized fleet packages</h2>
+  <p class="lead">Four named, sellable products — separate from the $219 retail "complete." Named packages make the sale concrete and let buyers pick a tier instead of negotiating from scratch.</p>
+  <div class="grid2">
+    <div class="card edge"><h4>Onyx Fleet — Maintenance</h4><p>Recurring exterior wash, wheels, glass + quick interior wipe-down. Keeps branded trucks photo-ready. <b>The core recurring product.</b></p><div class="pkgmeta">Best for: HVAC / plumbing / pest / service fleets · Weekly or bi-weekly</div></div>
+    <div class="card edge"><h4>Onyx Fleet — Full Detail</h4><p>Complete wash + full interior vacuum, wipe, glass. The step-up recurring tier.</p><div class="pkgmeta">Best for: rentals, black-car, shuttles · Bi-weekly or monthly</div></div>
+    <div class="card edge"><h4>Onyx Recon-Ready</h4><p>Per-unit deep detail — full interior &amp; exterior, shampoo/extraction, dressing. Sale-prep quality.</p><div class="pkgmeta">Best for: dealers, auctions, RV/powersports · Per-unit, ongoing volume</div></div>
+    <div class="card edge"><h4>Onyx Sanitize+</h4><p>Documented disinfectant treatment added to any detail. Built for patient-transport compliance.</p><div class="pkgmeta">Best for: NEMT / medical transport · Per the contract schedule</div></div>
+  </div>
+</div></section>
+
+<!-- 3 PRICING -->
+<section id="pricing"><div class="wrap">
+  <p class="snum">03</p><h2>Pricing &amp; the path to $8–12k/month</h2>
+  <p class="lead">Fleet pricing trades a lower per-vehicle price for volume + a recurring schedule. The retail anchor ($219 complete) stays for consumers; fleet gets its own per-vehicle rates. Here's a concrete model for a ~$10k month — the midpoint of the target.</p>
+
+  <table class="t">
+    <thead><tr><th>Revenue source</th><th>What it looks like</th><th class="r">Monthly</th></tr></thead>
+    <tbody>
+      <tr><td class="b">Recurring fleet base · ~5 accounts</td><td>Avg ~$1,000/account — e.g. a 20-truck service fleet on bi-weekly Maintenance ($25 × 20 × 2)</td><td class="r">$5,000</td></tr>
+      <tr><td class="b">Anchor account · 1 high-volume</td><td>Auction / United Caterers / courier — per-unit recon or large fleet volume</td><td class="r">$2,500</td></tr>
+      <tr><td class="b">Premium retail fill-in</td><td>~12 retail details on open days @ ~$210 (referrals + the 5.0★ inbound)</td><td class="r">$2,500</td></tr>
+      <tr class="total"><td>Total</td><td>Recurring-heavy, predictable</td><td class="r">$10,000</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note"><b>The one lever:</b> each new recurring fleet account ≈ <b>+$1,000 MRR</b>. So the entire 90-day game is: <b>sign ~6 recurring accounts</b> and let premium retail fill the open days. Hit the low end ($8k) with 4–5 accounts; stretch to $12k with 7–8 or a bigger anchor.</p></div>
+
+  <h3 class="kicker">What makes ~$1,000/account realistic</h3>
+  <table class="t">
+    <thead><tr><th>Account type</th><th>Math</th><th class="r">≈ Monthly</th></tr></thead>
+    <tbody>
+      <tr><td>20-truck service fleet</td><td>Maintenance @ ~$25 × 20 trucks × 2 visits</td><td class="r">$1,000</td></tr>
+      <tr><td>Dealer recon</td><td>Recon-Ready @ ~$35 × ~40 units/mo</td><td class="r">$1,400</td></tr>
+      <tr><td>8-van NEMT</td><td>Full + Sanitize+ @ ~$30 × 8 vans × 4 wks</td><td class="r">$960</td></tr>
+      <tr><td>15-car exotic rental</td><td>Per-turn detail @ ~$20 × volume</td><td class="r">$900+</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="kicker">Know your floor before every quote</h3>
+  <div class="card"><p style="color:#cdd0d8"><b>(products per vehicle) + (target hourly × hours per vehicle) + (drive ÷ vehicles in the stop) = cost floor.</b> Quote above it, always. If a volume discount pushes near the floor, raise the cadence or trim the scope — don't work for free. A one-screen spreadsheet with these inputs lets Robert price any fleet in 60 seconds.</p></div>
+</div></section>
+
+<!-- 4 ENGINE -->
+<section id="engine"><div class="wrap">
+  <p class="snum">04</p><h2>The acquisition engine</h2>
+  <p class="lead">Two layers running together: the <b>free</b> outreach motion (where most early accounts come from) and a <b>paid</b> layer — since Robert's willing to invest, and his 5.0★ makes paid channels cheap and effective.</p>
+  <div class="grid2">
+    <div class="card"><h4>Free / sweat-equity layer</h4><p>• Walk the dealer clusters (start with Jefferson/Oak Cliff — closest to 75216 — then Harry Hines, Forest Lane)<br>• Targeted calls from the 79-lead list, by segment<br>• A referral ask after <em>every</em> retail job + every fleet visit<br>• Door-hangers/flyers dropped at service-company yards</p></div>
+    <div class="card"><h4>Paid / invest layer</h4><p>• <b>Google LSA + GBP tune-up</b> — own "fleet / commercial detailing Dallas"; 5.0★/16 makes LSA convert cheap<br>• <b>Vehicle signage</b> on the rig — a rolling billboard in the exact yards he services<br>• <b>IG content</b> — ramp from 9 posts to ~3 before/afters a week + a "Fleet" highlight<br>• <b>Light Meta retargeting</b> to local business pages (optional)</p></div>
+  </div>
+  <h3 class="kicker">Weekly operating rhythm (solo)</h3>
+  <table class="t">
+    <thead><tr><th>When</th><th>Focus</th></tr></thead>
+    <tbody>
+      <tr><td class="b">Mon–Sat mornings</td><td>Booked jobs — fleet routes clustered by geography (one area per day to cut drive time)</td></tr>
+      <tr><td class="b">2–3 afternoons/wk</td><td>Prospecting block — alternate walk-up days and call days; aim for <b>3+ trials booked/week</b></td></tr>
+      <tr><td class="b">After every job</td><td>Ask for the Google review + "who else runs vehicles I should talk to?"</td></tr>
+      <tr><td class="b">Sunday</td><td>Follow-ups (the 2nd–4th touches), next week's route, post content</td></tr>
+    </tbody>
+  </table>
+</div></section>
+
+<!-- 5 ASSETS + OPS -->
+<section id="ops"><div class="wrap">
+  <p class="snum">05</p><h2>Sales assets &amp; operations</h2>
+  <div class="grid3">
+    <div class="card"><h4>Pipeline tracker</h4><p>One sheet, 7 stages: Prospect → Contacted → Trial booked → Trial done → Proposed → Signed → Active. No lead dies without a hard no or 4+ touches.</p></div>
+    <div class="card"><h4>Routing from 75216</h4><p>Batch jobs by area/day (NW = Harry Hines, NE = Garland, near = Oak Cliff). A 20-truck Maintenance ≈ a half/full day.</p></div>
+    <div class="card"><h4>Capacity &amp; the hire trigger</h4><p>Solo holds ~5–8 active recurring accounts + retail. When 2+ weeks stay fully booked and inbound is still coming, add a part-time tech or 2nd rig.</p></div>
+  </div>
+
+  <h3 class="kicker">One-page Fleet Service Agreement (template)</h3>
+  <div class="agreement">
+    <h4>ONYX FLEET — Service Agreement</h4>
+    <div class="row"><span class="k">Client</span> &nbsp; Business name · contact · address / yard</div>
+    <div class="row"><span class="k">Scope</span> &nbsp; Package (Maintenance / Full Detail / Recon-Ready / Sanitize+) · vehicles covered &amp; count</div>
+    <div class="row"><span class="k">Cadence</span> &nbsp; Weekly / bi-weekly / monthly · service day</div>
+    <div class="row"><span class="k">Price</span> &nbsp; $___ per vehicle · ≈ $___ per visit · ≈ $___ / month</div>
+    <div class="row"><span class="k">Extras</span> &nbsp; Excessive mud, pet hair, biohazard billed separately at $___</div>
+    <div class="row"><span class="k">Terms</span> &nbsp; Net 15 (or on-visit) · 30-day cancellation, either side · auto-renews monthly</div>
+    <div class="row"><span class="k">Sign</span> &nbsp; Client ____________  ·  Onyx (Robert) ____________  ·  Date ______</div>
+  </div>
+  <p class="lead" style="font-size:13px;margin-top:10px">Keep it to one page. A simple written agreement makes Onyx look professional and protects both sides — fleets sign these readily.</p>
+</div></section>
+
+<!-- 6 BRAND -->
+<section id="brand"><div class="wrap">
+  <p class="snum">06</p><h2>Brand &amp; credibility layer</h2>
+  <p class="lead">The 5.0★ reputation is Onyx's biggest unfair advantage in B2B. Compound it and put it everywhere a buyer looks.</p>
+  <div class="grid3">
+    <div class="card"><h4>Reviews → 25+</h4><p>Ask every happy customer; QR code on the handout. Each fleet job = ask the manager. Reviews are the cheapest sales tool there is.</p></div>
+    <div class="card"><h4>Onyx Fleet web page</h4><p>Add a B2B page to onyxdetaildfw.com: packages, "5.0★," trusted-by logos as they land, and a "Request a fleet quote" form.</p></div>
+    <div class="card"><h4>GBP + IG for fleet</h4><p>Add "commercial / fleet detailing" to Google services; a "Fleet" IG highlight; case-study posts ("kept this HVAC fleet sharp all month").</p></div>
+  </div>
+</div></section>
+
+<!-- 7 CALENDAR -->
+<section id="calendar"><div class="wrap">
+  <p class="snum">07</p><h2>The 90-day rollout</h2>
+  <p class="lead">North-star: a <b>recurring-heavy $8–12k/month</b> by day 90. Each phase has a focus and a revenue checkpoint.</p>
+
+  <div class="phase">
+    <div class="hd"><span class="days">Days 1–30</span><h4>Set up &amp; first signings</h4><span class="goal">+$2–3k recurring</span></div>
+    <ul>
+      <li>Build the Onyx Fleet page, the 4 packages, and the one-page agreement; update GBP, handouts &amp; add rig signage</li>
+      <li>Work the closest clusters first — Jefferson/Oak Cliff, then Harry Hines; book trials with the easy-yes fleets (Chapman, Add-All, Romney)</li>
+      <li>Target <b>2–3 signed recurring accounts</b> while keeping the retail book full</li>
+    </ul>
+  </div>
+  <div class="phase">
+    <div class="hd"><span class="days">Days 31–60</span><h4>Engine running</h4><span class="goal">~$5–7k recurring</span></div>
+    <ul>
+      <li>Launch Google LSA + retargeting; run the weekly prospecting rhythm (3+ trials/week)</li>
+      <li>Land <b>2–3 more accounts</b>, including one anchor (Manheim recon, United Caterers, or Hot Shot Final Mile)</li>
+      <li>Push Google reviews past 20; start the referral flywheel from active accounts</li>
+    </ul>
+  </div>
+  <div class="phase">
+    <div class="hd"><span class="days">Days 61–90</span><h4>Fill to target &amp; systematize</h4><span class="goal">$8–12k steady</span></div>
+    <ul>
+      <li>Close the pipeline to hit the target; lock routing and the weekly schedule</li>
+      <li>Decide the capacity trigger — if fully booked 2+ weeks running, line up a part-time tech</li>
+      <li>Make the referral + review loop automatic so the book keeps growing without more cold outreach</li>
+    </ul>
+  </div>
+
+  <h3 class="kicker">The 4 numbers to watch</h3>
+  <div class="grid4">
+    <div class="kpi"><span class="dot"></span><span><b>Recurring MRR</b> — the north star</span></div>
+    <div class="kpi"><span class="dot"></span><span><b>Active accounts</b> — target ~6</span></div>
+    <div class="kpi"><span class="dot"></span><span><b>Trials booked/wk</b> — aim 3+</span></div>
+    <div class="kpi"><span class="dot"></span><span><b>Google reviews</b> — drive to 25+</span></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <p><b>How this connects to Phase 1.</b> The <a href="index.html">prospect list &amp; outreach kit</a> are the fuel; this plan is the engine. As Robert works the list, the pipeline tracker feeds real data back — which segments convert, what pricing closes, which scripts land — so the plan tightens itself over the 90 days.</p>
+  <p>Prepared for Onyx Detail Collective (Robert) · Phase 2 of 2. Targets are planning figures, not guarantees — they assume the weekly rhythm is run consistently.</p>
+  <div class="crumbs"><a href="index.html">← Prospect list &amp; outreach playbook</a><a href="marketing/leave-behind.pdf">Leave-behind PDF</a><a href="marketing/before-after.pdf">Before/after PDF</a></div>
+</div></footer>
+</body>
+</html>
